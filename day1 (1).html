@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><title>Day 1 - Live Time</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; font-family:Segoe UI, Arial; background:linear-gradient(180deg, #FFD93D 0%, #FF9A3C 30%, #FF6B35 60%, #2D1B4E 100%);}
+ .card{background:rgba(255,255,255,0.95); padding:40px; border-radius:20px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.3); max-width:400px; width:90%;}
+  #clock{font-size:50px; font-weight:800; color:#FF6B35;}
+  #date{color:#8B3A62; font-weight:600; margin-top:10px;}
+  h2{color:#2D1B4E;} a{color:#2D1B4E; font-size:13px; text-decoration:none; opacity:0.7;}
+</style>
+</head><body>
+<div class="card">
+  <h2>☀️ Day 1: Live Clock</h2>
+  <div id="clock">00:00:00</div>
+  <p id="date"></p>
+  <p style="font-size:12px; opacity:0.6; margin-top:20px;">JavaScript setInterval + new Date()</p>
+  <br><a href="day2.html">Next → Day 2</a>
+</div>
+<script>
+function updateTime(){
+  let now=new Date();
+  document.getElementById("clock").innerHTML=now.toLocaleTimeString();
+  document.getElementById("date").innerHTML=now.toLocaleDateString('en-US',{weekday:'long', year:'numeric', month:'long', day:'numeric'});
+}
+setInterval(updateTime,1000); updateTime();
+</script>
+</body></html>

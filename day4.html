@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><title>Day 4 - Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{margin:0; min-height:100vh; font-family:Segoe UI, Arial; background:linear-gradient(180deg, #FFD93D 0%, #FF9A3C 30%, #FF6B35 60%, #2D1B4E 100%); display:flex; align-items:center; justify-content:center; padding:20px;}
+ .card{background:rgba(255,255,255,0.95); padding:30px; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.3); max-width:500px; width:100%;}
+  h2{color:#2D1B4E; text-align:center;}.question{background:#fff7d6; padding:15px; border-radius:10px; margin-top:15px; color:#2D1B4E;}
+  button{width:100%; padding:12px; margin-top:20px; border:none; border-radius:25px; background:linear-gradient(90deg, #FFD93D, #FF6B35); color:#2D1B4E; font-weight:bold; font-size:16px; cursor:pointer;}
+  a{color:#2D1B4E; font-size:13px; text-decoration:none; opacity:0.7;}
+</style>
+</head><body>
+<div class="card">
+  <h2>🌙 Day 4: Simple Quiz</h2>
+  <div class="question">
+    <p>1. What does HTML stand for?</p>
+    <input type="radio" name="q1" value="correct"> Hyper Text Markup Language<br>
+    <input type="radio" name="q1" value="wrong"> High Tech Modern Language
+  </div>
+  <div class="question">
+    <p>2. Capital of Mountain Province?</p>
+    <input type="radio" name="q2" value="correct"> Bontoc<br>
+    <input type="radio" name="q2" value="wrong"> Sagada
+  </div>
+  <div class="question">
+    <p>3. What is JavaScript used for?</p>
+    <input type="radio" name="q3" value="correct"> Make webpage interactive<br>
+    <input type="radio" name="q3" value="wrong"> Design clothes
+  </div>
+  <div class="question">
+    <p>4. Who's the current President in the US?</p>
+    <input type="radio" name="q4" value="wrong"> Markiplier<br>
+    <input type="radio" name="q4" value="correct"> Donald Trump
+  </div>
+  <div class="question">
+    <p>5. Did he/she replied to your feelings?</p>
+    <input type="radio" name="q5" value="correct"> No, but we stayed as friends<br>
+    <input type="radio" name="q5" value="wrong"> Yes, but never blossomed
+  </div>
+  <div class="question">
+    <p>6. If you are useless, will they use you?</p>
+    <input type="radio" name="q6" value="wrong"> Idk<br>
+    <input type="radio" name="q6" value="correct"> That is hypothetically idk
+  </div>
+  <div class="question">
+    <p>7. When was Cyrhen born?</p>
+    <input type="radio" name="q7" value="wrong"> Dec.30,2009<br>
+    <input type="radio" name="q7" value="correct"> Dec.20,2010
+  </div>
+  <div class="question">
+    <p>8. 3241627×0×123=?</p>
+    <input type="radio" name="q8" value="correct"> 0<br>
+    <input type="radio" name="q8" value="wrong"> 42,141,151
+  </div>
+  
+  <button onclick="checkQuiz()">Submit Quiz</button>
+  <h3 id="result" style="text-align:center; color:#FF6B35;"></h3>
+  <div style="text-align:center; margin-top:20px;"><a href="day3.html">← Day 3</a> | <a href="day1.html">Back to Day 1</a></div>
+</div>
+<script>
+function checkQuiz(){
+  let q1=document.querySelector('input[name="q1"]:checked');
+  let q2=document.querySelector('input[name="q2"]:checked');
+  let q3=document.querySelector('input[name="q3"]:checked');
+    let q4=document.querySelector('input[name="q4"]:checked');
+      let q5=document.querySelector('input[name="q5"]:checked');
+     let q6=document.querySelector('input[name="q6"]:checked');
+     let q7=document.querySelector('input[name="q7"]:checked');
+     let q8=document.querySelector('input[name="q8"]:checked');       
+  if(!q1||!q2||!q3|!q4|!q5|!q6|!q7|!q8){ alert("Please answer all!"); return; }
+  let score=0;
+  if(q1.value=="correct") score++;
+  if(q2.value=="correct") score++;
+  if(q3.value=="correct") score++;
+  if(q4.value=="correct") score++;
+  if(q5.value=="correct") score++;
+  if(q6.value=="correct") score++;
+  if(q7.value=="correct") score++;
+  if(q8.value=="correct") score++;
+  document.getElementById("result").innerHTML=`You scored ${score}/8 ${score==8?'🌟 Excellent!':'☀️ Keep practicing!'}`;
+}
+</script>
+</body></html>
